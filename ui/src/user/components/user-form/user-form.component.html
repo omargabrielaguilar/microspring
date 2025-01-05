@@ -1,0 +1,15 @@
+<div>
+  <h1>Create User</h1>
+  <form (ngSubmit)="createUser()">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" [(ngModel)]="user.firstName" name="firstName" required />
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" [(ngModel)]="user.lastName" name="lastName" required />
+
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="user.email" name="email" required />
+
+    <button type="submit">Create</button>
+  </form>
+</div>
