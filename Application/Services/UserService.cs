@@ -17,9 +17,9 @@ namespace Application.Services
             return await _userRepository.GetUserById(id);
         }
 
-        public async Task<IEnumerable<User>> GetAllUser()
+        public async Task<IEnumerable<User>> GetAllUsers()
         {
-            return await _userRepository.GetAllUser();
+            return await _userRepository.GetAllUsers();
         }
 
         public async Task CreateUser(User user)

@@ -5,7 +5,7 @@ namespace Core.Interfaces
     public interface IUserRepository
     {
         Task<User> GetUserById(string id);
-        Task<IEnumerable<User>> GetAllUser();
+        Task<IEnumerable<User>> GetAllUsers();
         Task CreateUser(User user);
         Task UpdateUser(User user);
         Task DeleteUser(string id);

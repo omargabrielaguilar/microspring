@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("netboil")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2512ab847ca58ff1b08ddb3dd36df356ff600c9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f14cef546fa19495a742f8d2b66a4d6c64590aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("netboil")]
 [assembly: System.Reflection.AssemblyTitleAttribute("netboil")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

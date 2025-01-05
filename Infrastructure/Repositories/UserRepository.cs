@@ -19,7 +19,7 @@ namespace Infrastructure.Repositories
             return await _usersCollection.Find(user => user.Id == id).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<User>> GetAllUser()
+        public async Task<IEnumerable<User>> GetAllUsers()
         {
             return await _usersCollection.Find(user => true).ToListAsync();
         }
