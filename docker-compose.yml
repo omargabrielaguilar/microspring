@@ -1,0 +1,24 @@
+version: "1.0"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      MongoDb__ConnectionString: "mongodb://mongo:27017"
+      MongoDb__DatabaseName: "netboil"
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
