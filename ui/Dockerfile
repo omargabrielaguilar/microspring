@@ -1,4 +1,4 @@
-# Dockerfile (frontend)
+# Dockerfile para Angular 17
 
 # Usar la imagen oficial de Node.js para construir la aplicación Angular
 FROM node:22 AS build
@@ -9,8 +9,9 @@ WORKDIR /app
 # Copiar los archivos de package.json y package-lock.json (si existen)
 COPY package*.json ./
 
-# Instalar las dependencias
+# Instalar las dependencias (esto incluye @angular-devkit/build-angular)
 RUN npm install
+RUN npm install -g @angular-devkit/build-angular
 
 # Copiar todo el código fuente de la aplicación Angular al contenedor
 COPY . .
@@ -22,7 +23,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copiar los archivos construidos a la carpeta de Nginx
-COPY --from=build /app/dist/your-angular-app /usr/share/nginx/html
+COPY --from=build /app/dist/ui /usr/share/nginx/html
 
 # Exponer el puerto 80
 EXPOSE 80
