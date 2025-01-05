@@ -1,24 +1,37 @@
-version: "3.8"
 services:
+  # Backend
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./netboil  # Ruta al directorio del backend (C# API)
+      dockerfile: Dockerfile  # Dockerfile del backend
     ports:
-      - "5000:5000" # Puerto externo 5000 apunta al interno 5000
+      - "5000:5000"  # Puerto para la API (backend)
     depends_on:
       - mongo
     environment:
       MongoDb__ConnectionString: "mongodb://mongo:27017"
       MongoDb__DatabaseName: "netboil"
 
+  # MongoDB
   mongo:
     image: mongo:6.0
     container_name: mongo
     ports:
-      - "27017:27017" # MongoDB escucha en el puerto 27017
+      - "27017:27017"  # MongoDB escucha en el puerto 27017
     volumes:
       - mongo_data:/data/db
+
+  # ui
+  frontend:
+    build:
+      context: ./ui  # Ruta al directorio del frontend (Angular)
+      dockerfile: Dockerfile  # Dockerfile del frontend
+    ports:
+      - "80:80"  # Puerto para el frontend (Angular)
+    depends_on:
+      - app  # Asegurarse de que el backend (API) esté disponible antes de levantar el frontend
+    environment:
+      API_URL: "http://app:5000"  # URL de la API backend (nombre del servicio de la API)
 
 volumes:
   mongo_data:
