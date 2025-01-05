@@ -6,6 +6,13 @@ D:\netboil\bin\Debug\net9.0\netboil.deps.json
 D:\netboil\bin\Debug\net9.0\netboil.runtimeconfig.json
 D:\netboil\bin\Debug\net9.0\netboil.dll
 D:\netboil\bin\Debug\net9.0\netboil.pdb
+D:\netboil\bin\Debug\net9.0\DnsClient.dll
+D:\netboil\bin\Debug\net9.0\MongoDB.Bson.dll
+D:\netboil\bin\Debug\net9.0\MongoDB.Driver.dll
+D:\netboil\bin\Debug\net9.0\SharpCompress.dll
+D:\netboil\bin\Debug\net9.0\Snappier.dll
+D:\netboil\bin\Debug\net9.0\ZstdSharp.dll
+D:\netboil\obj\Debug\net9.0\netboil.csproj.AssemblyReference.cache
 D:\netboil\obj\Debug\net9.0\netboil.GeneratedMSBuildEditorConfig.editorconfig
 D:\netboil\obj\Debug\net9.0\netboil.AssemblyInfoInputs.cache
 D:\netboil\obj\Debug\net9.0\netboil.AssemblyInfo.cs
@@ -22,6 +29,7 @@ D:\netboil\obj\Debug\net9.0\staticwebassets\msbuild.build.netboil.props
 D:\netboil\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.netboil.props
 D:\netboil\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.netboil.props
 D:\netboil\obj\Debug\net9.0\staticwebassets.pack.json
+D:\netboil\obj\Debug\net9.0\netboil.csproj.Up2Date
 D:\netboil\obj\Debug\net9.0\netboil.dll
 D:\netboil\obj\Debug\net9.0\refint\netboil.dll
 D:\netboil\obj\Debug\net9.0\netboil.pdb
