@@ -11,13 +11,11 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 
 builder.Configuration.AddEnvironmentVariables();
 
-
 // Configuración de MongoDB
 string mongoConnectionString = Environment.GetEnvironmentVariable("MongoDb__ConnectionString")
     ?? throw new Exception("MongoDb__ConnectionString environment variable not set");
 string mongoDatabaseName = Environment.GetEnvironmentVariable("MongoDb__DatabaseName")
     ?? throw new Exception("MongoDb__DatabaseName environment variable not set");
-
 
 // Registrar servicios
 builder.Services.AddSingleton<IMongoClient>(new MongoClient(mongoConnectionString));
@@ -25,12 +23,24 @@ builder.Services.AddScoped<IUserRepository, UserRepository>(sp =>
     new UserRepository(sp.GetRequiredService<IMongoClient>(), mongoDatabaseName));
 builder.Services.AddScoped<UserService>();
 
+// Habilitar CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin() // Permite solicitudes desde cualquier dominio
+              .AllowAnyMethod() // Permite todos los métodos HTTP
+              .AllowAnyHeader(); // Permite todos los encabezados
+    });
+});
+
 // Añadir controladores
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configurar la aplicación
+// Usar CORS antes de la autorización
+app.UseCors();
 app.UseAuthorization();
 app.MapControllers();
 

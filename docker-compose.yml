@@ -2,7 +2,7 @@ services:
   # Backend
   app:
     build:
-      context: ./netboil  # Ruta al directorio del backend (C# API)
+      context: .  # Ruta al directorio del backend (C# API)
       dockerfile: Dockerfile  # Dockerfile del backend
     ports:
       - "5000:5000"  # Puerto para la API (backend)
