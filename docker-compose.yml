@@ -20,18 +20,5 @@ services:
       - "27017:27017"  # MongoDB escucha en el puerto 27017
     volumes:
       - mongo_data:/data/db
-
-  # ui
-  frontend:
-    build:
-      context: ./ui  # Ruta al directorio del frontend (Angular)
-      dockerfile: Dockerfile  # Dockerfile del frontend
-    ports:
-      - "80:80"  # Puerto para el frontend (Angular)
-    depends_on:
-      - app  # Asegurarse de que el backend (API) esté disponible antes de levantar el frontend
-    environment:
-      API_URL: "http://app:5000"  # URL de la API backend (nombre del servicio de la API)
-
 volumes:
   mongo_data:
